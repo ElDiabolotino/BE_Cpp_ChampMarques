@@ -1,6 +1,6 @@
 /*********************************************************************
  * @file  Apllication.cpp
- * @author "Raphaël Marques"
+ * @author "Raphaël Marques" Julie Champagne
  * @brief Fichier source de l'application
  *********************************************************************/
 #include "Application.h"
