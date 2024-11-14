@@ -1,6 +1,6 @@
 /*********************************************************************
  * @file  Apllication.cpp
- * @author <mettre l'adresse mail ou nom prenom>
+ * @author "Raphaël Marques"
  * @brief Fichier source de l'application
  *********************************************************************/
 #include "Application.h"
