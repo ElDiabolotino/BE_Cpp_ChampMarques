@@ -1,3 +1,8 @@
+/*********************************************************************
+ * @file  Capteur.cpp
+ * @author Julie Champagne 
+ * @brief Fichier source de la classe capteur
+ *********************************************************************/
 #include "Capteur.h"
 
 Capteur::Capteur()

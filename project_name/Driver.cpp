@@ -1,5 +1,5 @@
 /*********************************************************************
- * @file  Apllication.cpp
+ * @file  Driver.cpp
  * @author "Raphaël Marques" Julie Champagne jfgkfd
  * @brief Fichier source de l'application
  *********************************************************************/
