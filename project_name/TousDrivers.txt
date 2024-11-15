@@ -1,0 +1,19 @@
+
+
+class driver 
+class Capteur : public driver
+
+class Temp&Humidité : public Capteur
+class Lumiere : public Capteur
+class Son : public Capteur
+class Toucher : public Capteur
+//class Ultrason : public Capteur ?
+
+class Actionneur : public driver
+
+class Buzzer : public Actionneur
+class LED : public Actionneur
+class LCD : public Actionneur
+//class Speaker : public Actionneur ?
+
+
