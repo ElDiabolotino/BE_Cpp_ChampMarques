@@ -31,7 +31,7 @@ class Actionneur : public Driver
     virtual void init(void)=0;
     /**
      * @fn virtual void run(void)
-     * @brief Fonction de lancement des ationneurs
+     * @brief Fonction de lancement des actionneurs
     */
     void run(void);
 };
