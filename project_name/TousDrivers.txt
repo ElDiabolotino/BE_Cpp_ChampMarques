@@ -3,7 +3,7 @@
 class driver 
 class Capteur : public driver
 
-class Temp&Humidité : public Capteur
+class TempHumid : public Capteur
 class Lumiere : public Capteur
 class Son : public Capteur
 class Toucher : public Capteur
