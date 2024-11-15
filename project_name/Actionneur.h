@@ -5,12 +5,13 @@
  *********************************************************************/
 #ifndef MYACTIONNEUR_H_
 #define MYACTIONNEUR_H_
+#include "Driver.h"
 
 /**
   * @class Actionneur
   * @brief Classe Actionneur 
 */    
-class Actionneur
+class Actionneur : public Driver
 {
   public :
     /**
@@ -24,13 +25,13 @@ class Actionneur
     */    
     ~Actionneur();    
     /**
-     * @fn void init(void)
-     * @brief Fonction d'initialisation de l'application
+     * @fn virtual void init(void)
+     * @brief Fonction d'initialisation des actionneurs
     */
-    void init(void);
+    virtual void init(void)=0;
     /**
-     * @fn void run(void)
-     * @brief Fonction de lancement de l'application
+     * @fn virtual void run(void)
+     * @brief Fonction de lancement des ationneurs
     */
     void run(void);
 };
