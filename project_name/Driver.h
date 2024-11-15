@@ -1,5 +1,5 @@
 /*********************************************************************
- * @file  Apllication.h
+ * @file  Driver.h
  * @author Marques Raphaël/ Champagne Julie
  * @brief Fichier header de l'application
  *********************************************************************/
