@@ -8,8 +8,15 @@
 
 ActioLCD::ActioLCD()
 {
-  // Code
-  ; 
+  ColorR = 0;
+  ColorG = 0;
+  ColorB = 0; 
+}
+
+ActioLCD::ActioLCD(int R,int G,int B){
+  ColorR = R;
+  ColorG = G;
+  ColorB = B;
 }
   
 ActioLCD::~ActioLCD()
@@ -20,8 +27,10 @@ ActioLCD::~ActioLCD()
 
 void ActioLCD::init(void)
 {
-  // Code
-    ;
+  lcd.begin(16,2);
+  ColorR = 100;
+  ColorG = 0;
+  ColorB = 0;
 }
 
 

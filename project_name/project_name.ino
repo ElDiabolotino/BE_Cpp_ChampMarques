@@ -1,15 +1,15 @@
-#include "Application.h"
+#include "ActioLCD.h"
 
-Application myApplication;
+ActioLCD myLCD;
 
 void setup() 
 {
   // put your setup code here, to run once:
-  myApplication.init();
+  myLCD.init();
 }
 
 void loop() 
 {
   // put your main code here, to run repeatedly:
-  myApplication.run();
+  myLCD.run();
 }

@@ -6,6 +6,7 @@
 #ifndef MYLCD_H_
 #define MYLCD_H_
 #include "Actionneur.h"
+#include "rgb_lcd.h"
 
 /**
   * @class ActioLCD
@@ -13,12 +14,15 @@
 */    
 class ActioLCD : public Actionneur
 {
+  rgb_lcd lcd;
+  int ColorR,ColorG,ColorB;
   public :
     /**
      * @fn ActioLCD();
      * @brief Constructeur par defaut
     */    
     ActioLCD();
+    ActioLCD(int R,int G,int B);
     /**
      * @fn ActioLCD();
      * @brief Destructeur
@@ -28,7 +32,7 @@ class ActioLCD : public Actionneur
      * @fn virtual void init(void)
      * @brief Fonction d'initialisation du Buzzer
     */
-    virtual void init(void)=0;
+    void init(void);
     /**
      * @fn virtual void run(void)
      * @brief Fonction de lancement des Buzzer
