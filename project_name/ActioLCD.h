@@ -15,7 +15,7 @@
 class ActioLCD : public Actionneur
 {
   rgb_lcd lcd;
-  int ColorR,ColorG,ColorB;
+  int isOn,isCurs,isBlink;
   public :
     /**
      * @fn ActioLCD();
@@ -23,30 +23,38 @@ class ActioLCD : public Actionneur
     */    
     ActioLCD();
     /**
-     * @fn ActioLCD(int R,int G,int B);
-     * @brief Constructeur avec les couleurs
+     * @fn ActioLCD(int On,int Cur, int Blin);
+     * @brief Constructeur avec le curseur, l'allumage et le stroboscope
     */    
-    ActioLCD(int R,int G,int B);
+    ActioLCD(int On,int Cur, int Blin);
     /**
      * @fn ActioLCD();
      * @brief Destructeur
     */    
     ~ActioLCD(); 
-    /**
-     * @fn virtual void setColors(int R, int G, int B)
-     * @brief Fonction assesseur des couleurs du LCD
-    */
-    void setColors(int R,int G,int B);   
     
-    void setTheTime(void);//*******************************************************/
     /**
-     * @fn virtual void toggleOn(int On)
-     * @brief Fonction d'allumage du LCD
+     * @fn virtual void setIsOn(int On)
+     * @brief Assesseur du LCD
     */
-    void toggleOn(int On);
+    void setIsOn(int On);
     /**
-     * @fn virtual void toggleOn(int On)
-     * @brief Fonction d'allumage du LCD
+     * @fn virtual void setIsCurs(int Cur)
+     * @brief Assesseur du LCD
+    */
+    void setIsCurs(int Cur);
+    /**
+     * @fn virtual void setIsBlink(int Blin)
+     * @brief Assesseur du LCD
+    */
+    void setIsBlink(int Blin);
+    
+    int getIsOn(void);
+    int getIsCur(void);
+    int getIsBlink(void);
+    /**
+     * @fn virtual void init(void)
+     * @brief Fonction d'init du LCD
     */
     void init(void);
     
