@@ -5,28 +5,67 @@
  *********************************************************************/
 #include "ActioBuzzer.h"
 
-
 ActioBuzzer::ActioBuzzer()
 {
-  // Code
-  ; 
+  buzzerPin = 0; 
+  melody = "ccggaagffeeddc ";  
+  tempo = 300;
+  //change beats values in the .h
 }
-  
+
+ActioBuzzer::ActioBuzzer(int Pin)
+{
+  buzzerPin = Pin; 
+  melody = "ccggaagffeeddc ";  
+  tempo = 300;
+  //change beats values in the .h
+}
+
 ActioBuzzer::~ActioBuzzer()
 {
-  // Code
   ;
 }  
 
 void ActioBuzzer::init(void)
 {
-  // Code
+  pinMode(buzzerPin, OUTPUT);
     ;
 }
 
 
 void ActioBuzzer::run(void)
 {
-  // Code
-    ;
+  playMelody (melody, beats, tempo);
+}
+
+void ActioBuzzer::playMelody (String melody, int *beats, int tempo){
+  for(int i = 0; i < (melody.length()); i++) {
+        if(melody[i] == ' ') {
+            delay(beats[i] * tempo);
+        } else {
+            playNote(melody[i], beats[i] * tempo);
+        }
+        delay(tempo / 2);    /* delay between notes */
+    }
+}
+
+void ActioBuzzer::playTone(int tone, int duration){
+  for (long i = 0; i < duration * 1000L; i += tone * 2) {
+    digitalWrite(buzzerPin, HIGH);
+    delayMicroseconds(tone);
+    digitalWrite(buzzerPin, LOW);
+    delayMicroseconds(tone);
+  }
+}
+
+void ActioBuzzer::playNote(char note, int duration){
+  char names[] = { 'c', 'd', 'e', 'f', 'g', 'a', 'b', 'C' };
+  int tones[] = { 1915, 1700, 1519, 1432, 1275, 1136, 1014, 956 };
+  
+  // play the tone corresponding to the note name
+  for (int i = 0; i < 8; i++) {
+    if (names[i] == note) {
+      playTone(tones[i], duration);
+    }
+  }
 }

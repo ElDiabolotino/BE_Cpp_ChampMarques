@@ -4,7 +4,7 @@
  * @brief Classe pour le driver ActioLCD
  *********************************************************************/
 #include "ActioLCD.h"
-using namespace std;
+
 
 ActioLCD::ActioLCD()
 {
@@ -35,9 +35,9 @@ ActioLCD::~ActioLCD()
   lcd.noDisplay();
 }  
 void ActioLCD::setParam(int On,int Cur, int Blin){
-  if (On) lcd.display();
-  else lcd.noDisplay();
-  if (Cur) lcd.cursor();
+  setIsOn(On);
+  setIsCurs(Cur);
+  setIsBlink(Blin);
 
 }
 void ActioLCD::setIsOn(int On){
@@ -46,13 +46,13 @@ void ActioLCD::setIsOn(int On){
   isOn = On;
 }
 
-void setIsCurs(int Cur){
+void ActioLCD::setIsCurs(int Cur){
   if (Cur) lcd.cursor();
   else lcd.noCursor();
   isCurs = Cur;
 }
 
-void setIsBlink(int Blin){
+void ActioLCD::setIsBlink(int Blin){
   if (Blin) lcd.blink();
   else lcd.noBlink();
   isBlink = Blin;
@@ -78,7 +78,7 @@ void ActioLCD::affMsg(char *Msg){
 void ActioLCD::init(void)
 {
   lcd.begin(16,2);
-  set(1);
+  lcd.setCursor(1,1);
   lcd.print("Wake Up!!");
 }
 

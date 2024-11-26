@@ -32,7 +32,7 @@ class ActioLCD : public Actionneur
      * @brief Destructeur
     */    
     ~ActioLCD(); 
-    
+    void setParam(int On,int Cur, int Blin);
     /**
      * @fn virtual void setIsOn(int On)
      * @brief Assesseur du LCD

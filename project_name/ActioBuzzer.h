@@ -6,6 +6,8 @@
 #ifndef MYBUZZER_H_
 #define MYBUZZER_H_
 #include "Actionneur.h"
+#include "Arduino.h"
+#include "string"
 
 /**
   * @class ActioBuzzer
@@ -13,12 +15,17 @@
 */    
 class ActioBuzzer : public Actionneur
 {
+  int buzzerPin;
+  String melody;
+  int beats[15] = {1,1,1,1,1,1,2,1,1,1,1,1,1,2,4};
+  int tempo;
   public :
     /**
      * @fn ActioBuzzer();
      * @brief Constructeur par defaut
     */    
     ActioBuzzer();
+    ActioBuzzer(int Pin);
     /**
      * @fn ActioBuzzer();
      * @brief Destructeur
@@ -34,6 +41,9 @@ class ActioBuzzer : public Actionneur
      * @brief Fonction de lancement des Buzzer
     */
     void run(void);
+    void playMelody (String melody, int *beats, int tempo);
+    void playTone(int tone, int duration);
+    void playNote(char note, int duration);
 };
 
 #endif
