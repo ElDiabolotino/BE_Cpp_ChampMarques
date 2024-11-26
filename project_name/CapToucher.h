@@ -1,28 +1,25 @@
 /*********************************************************************
- * @file  CapLum.h
+ * @file  CapToucher.h
  * @author Champagne Julie
- * @brief Fichier header de la classe Capteur de Luminosite
+ * @brief Fichier header de la classe Capteur Toucher
  *********************************************************************/
-#ifndef CAPLUM_H_
-#define CAPLUM_H_
+#ifndef CAPTOUCHER_H_
+#define CAPTOUCHER_H_
 #include "Capteur.h"
 #include "Arduino.h"
 
 
-class CapLum : public Capteur {
-  int lumPin;
+class CapToucher : public Capteur {
+  int sonPin;
   int mesCapt;
-  float resistCapt;
     public:
-    CapLum();
-    CapLum(int Pin);
-    ~CapLum();
+    CapToucher();
+    CapToucher(int Pin);
+    ~CapToucher();
     void init(void);
-    float getResistCapt(void);
     int getMesCapt(void);
     int updateMesCapt(void);
-    float updateResistCapt(void);
-    void updateCapteur(void);
+
 
 };
 

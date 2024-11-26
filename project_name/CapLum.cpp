@@ -22,7 +22,10 @@ void CapLum::init(void){
 float CapLum::getResistCapt(void){
   return resistCapt;
 }
-int CapLum::measure(void){
+int CapLum::getMesCapt (void){
+  return mesCapt;
+}
+int CapLum::updateMesCapt(void){
   mesCapt = analogRead(lumPin);
   return mesCapt;
 }
@@ -31,6 +34,6 @@ float CapLum::updateResistCapt(void){
   return resistCapt;
 }
 void CapLum::updateCapteur(void){
-  measure();
+  updateMesCapt();
   updateResistCapt();
 }

@@ -1,28 +1,25 @@
 /*********************************************************************
- * @file  CapLum.h
+ * @file  CapSon.h
  * @author Champagne Julie
- * @brief Fichier header de la classe Capteur de Luminosite
+ * @brief Fichier header de la classe Capteur Sonore
  *********************************************************************/
-#ifndef CAPLUM_H_
-#define CAPLUM_H_
+#ifndef CAPSON_H_
+#define CAPSON_H_
 #include "Capteur.h"
 #include "Arduino.h"
 
 
-class CapLum : public Capteur {
-  int lumPin;
+class CapSon : public Capteur {
+  int sonPin;
   int mesCapt;
-  float resistCapt;
     public:
-    CapLum();
-    CapLum(int Pin);
-    ~CapLum();
+    CapSon();
+    CapSon(int Pin);
+    ~CapSon();
     void init(void);
-    float getResistCapt(void);
     int getMesCapt(void);
     int updateMesCapt(void);
-    float updateResistCapt(void);
-    void updateCapteur(void);
+
 
 };
 

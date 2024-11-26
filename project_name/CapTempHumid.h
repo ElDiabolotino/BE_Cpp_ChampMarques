@@ -1,28 +1,25 @@
 /*********************************************************************
- * @file  CapLum.h
+ * @file  CapTempHumid.h
  * @author Champagne Julie
- * @brief Fichier header de la classe Capteur de Luminosite
+ * @brief Fichier header de la classe Capteur TempHumid
  *********************************************************************/
-#ifndef CAPLUM_H_
-#define CAPLUM_H_
+#ifndef CAPTEMPHUMID_H_
+#define CAPTEMPHUMID_H_
 #include "Capteur.h"
 #include "Arduino.h"
 
 
-class CapLum : public Capteur {
-  int lumPin;
+class CapTempHumid : public Capteur {
+  int THPin;
   int mesCapt;
-  float resistCapt;
     public:
-    CapLum();
-    CapLum(int Pin);
-    ~CapLum();
+    CapTempHumid();
+    CapTempHumid(int Pin);
+    ~CapTempHumid();
     void init(void);
-    float getResistCapt(void);
     int getMesCapt(void);
     int updateMesCapt(void);
-    float updateResistCapt(void);
-    void updateCapteur(void);
+
 
 };
 
