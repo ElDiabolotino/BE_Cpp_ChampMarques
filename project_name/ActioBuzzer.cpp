@@ -10,6 +10,7 @@ ActioBuzzer::ActioBuzzer()
   buzzerPin = 0; 
   melody = "ccggaagffeeddc ";  
   tempo = 300;
+  Biping = 0;
   //change beats values in the .h
 }
 
@@ -18,6 +19,7 @@ ActioBuzzer::ActioBuzzer(int Pin)
   buzzerPin = Pin; 
   melody = "ccggaagffeeddc ";  
   tempo = 300;
+  Biping = 0;
   //change beats values in the .h
 }
 
@@ -29,13 +31,17 @@ ActioBuzzer::~ActioBuzzer()
 void ActioBuzzer::init(void)
 {
   pinMode(buzzerPin, OUTPUT);
-    ;
+  digitalWrite(buzzerPin, LOW);
 }
 
 
 void ActioBuzzer::run(void)
 {
   playMelody (melody, beats, tempo);
+}
+
+void ActioBuzzer::toggleBip (void){
+  digitalWrite(buzzerPin,(Biping)? LOW:HIGH);
 }
 
 void ActioBuzzer::playMelody (String melody, int *beats, int tempo){

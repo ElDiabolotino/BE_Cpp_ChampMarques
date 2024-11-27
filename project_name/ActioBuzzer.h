@@ -15,6 +15,7 @@
 */    
 class ActioBuzzer : public Actionneur
 {
+  int Biping;
   int buzzerPin;
   String melody;
   int beats[15] = {1,1,1,1,1,1,2,1,1,1,1,1,1,2,4};
@@ -41,6 +42,7 @@ class ActioBuzzer : public Actionneur
      * @brief Fonction de lancement des Buzzer
     */
     void run(void);
+    void toggleBip (void);
     void playMelody (String melody, int *beats, int tempo);
     void playTone(int tone, int duration);
     void playNote(char note, int duration);
