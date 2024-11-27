@@ -10,15 +10,18 @@
 
 
 class CapToucher : public Capteur {
-  int sonPin;
-  int mesCapt;
+  int touchPin;
+  int etat;
+
     public:
     CapToucher();
     CapToucher(int Pin);
     ~CapToucher();
     void init(void);
-    int getMesCapt(void);
-    int updateMesCapt(void);
+    int getCapt(void);
+    int updateCapt(void);//à enlever
+    int getEtat(void);
+    void run(void);
 
 
 };
