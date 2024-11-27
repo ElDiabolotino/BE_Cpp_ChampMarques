@@ -46,6 +46,8 @@ class ActioBuzzer : public Actionneur
     void playMelody (String melody, int *beats, int tempo);
     void playTone(int tone, int duration);
     void playNote(char note, int duration);
+
+
 };
 
 #endif
