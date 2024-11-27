@@ -7,19 +7,22 @@
 #define CAPTEMPHUMID_H_
 #include "Capteur.h"
 #include "Arduino.h"
+#include "Grove_Temperature_And_Humidity_Sensor.h"
 
+#define DHTTYPE DHT11
+#define DHTPIN 0
 
 class CapTempHumid : public Capteur {
-  int THPin;
-  int mesCapt;
+  float mesCapt[2];
+  DHT dht(DHTPIN,DHTTYPE);
     public:
     CapTempHumid();
-    CapTempHumid(int Pin);
+    CapTempHumid(int wioLink);
     ~CapTempHumid();
     void init(void);
     int getMesCapt(void);
     int updateMesCapt(void);
-
+  
 
 };
 

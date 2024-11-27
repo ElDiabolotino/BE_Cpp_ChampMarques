@@ -79,7 +79,7 @@ void ActioLCD::init(void)
 {
   lcd.begin(16,2);
   lcd.setCursor(1,1);
-  lcd.print("Wake Up!!");
+  lcd.print(".");
 }
 
 void ActioLCD::run(void)
