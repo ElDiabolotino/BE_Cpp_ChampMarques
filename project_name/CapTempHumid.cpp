@@ -6,21 +6,21 @@
 #include "CapTempHumid.h"
 
 
-CapTempHumid::CapTempHumid(void){
-  mesCapt = {0,0};
+CapTempHumid::CapTempHumid(void): dht(DHTPIN,DHTTYPE){
+  mesCapt[0] = 0;
+  mesCapt[1] = 0;
 }
 
-CapTempHumid::CapTempHumid(int wioLink){
-  mesCapt = {0,0};
+CapTempHumid::CapTempHumid(int wioLink): dht(DHTPIN,DHTTYPE){
+  mesCapt[0] = 0;
+  mesCapt[1] = 0;
   if (wioLink){
-    pinMode(PIN_GROVE_POWER, OUTPUT);
-    digitalWrite(PIN_GROVE_POWER,1);
+  //  pinMode(PIN_GROVE_POWER, OUTPUT);
+  //  digitalWrite(PIN_GROVE_POWER,1);
   }
 }
 
-CapTempHumid::~CapTempHumid(void){
-  delete [] dht;
-}
+CapTempHumid::~CapTempHumid(void){}
 
 void CapTempHumid::init(){
   Wire.begin();

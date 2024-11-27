@@ -14,14 +14,16 @@
 
 class CapTempHumid : public Capteur {
   float mesCapt[2];
-  DHT dht(DHTPIN,DHTTYPE);
+  DHT dht;
     public:
     CapTempHumid();
     CapTempHumid(int wioLink);
     ~CapTempHumid();
     void init(void);
-    int getMesCapt(void);
     int updateMesCapt(void);
+    float getHumid(void);
+    float getTemp(void);
+
   
 
 };
