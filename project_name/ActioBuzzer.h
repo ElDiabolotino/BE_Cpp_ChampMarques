@@ -36,7 +36,7 @@ class ActioBuzzer : public Actionneur
      * @fn virtual void init(void)
      * @brief Fonction d'initialisation du Buzzer
     */
-    virtual void init(void)=0;
+    virtual void init(void);
     /**
      * @fn virtual void run(void)
      * @brief Fonction de lancement des Buzzer
@@ -46,6 +46,8 @@ class ActioBuzzer : public Actionneur
     void playMelody (String melody, int *beats, int tempo);
     void playTone(int tone, int duration);
     void playNote(char note, int duration);
+
+
 };
 
 #endif
