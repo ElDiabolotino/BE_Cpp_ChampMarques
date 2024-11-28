@@ -11,8 +11,8 @@ CapToucher::CapToucher(){
     etat = 0;
 }
 
-CapToucher::CapToucher(int Pint){
-    touchPin = Pint;
+CapToucher::CapToucher(int Pin){
+    touchPin = Pin;
     etat = 0;
 }
 
