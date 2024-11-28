@@ -5,20 +5,40 @@
  *********************************************************************/
 #ifndef MYTIME_H_
 #define MYTIME_H_
-#include "time.h"
+#include <ESP8266WiFi.h>
+#include <WiFiUdp.h>
+
+#ifndef STASSID
+#define STASSID "your-ssid"
+#define STAPSK "your-password"
+#endif
 
 class MyTime {
-  int Ahour, Amin;
-  time_t t;
+  char* ssid ;  // your network SSID (name)
+  char* pass ;   // your network password
+  unsigned int localPort;  // local port to listen for UDP packets
+  /* Don't hardwire the IP address or we won't get the benefits of the pool.
+      Lookup the IP address for the host name instead */
+  // IPAddress timeServer(129, 6, 15, 28); // time.nist.gov NTP server
+  IPAddress timeServerIP;  // time.nist.gov NTP server address
+  const char* ntpServerName = "time.nist.gov";
+  const int NTP_PACKET_SIZE = 48;  // NTP time stamp is in the first 48 bytes of the message
 
+  byte *packetBuffer;  // buffer to hold incoming and outgoing packets
+
+  // A UDP instance to let us send and receive packets over UDP
+  WiFiUDP udp;
+  protected :
+  const unsigned long seventyYears = 2208988800UL;
+  unsigned long epoch,secsSince1900;
+  
+  public : 
   MyTime();
-  MyTime();
+  MyTime(int port, char* ssid, char* pass);
   ~MyTime();
   void init(void);
   void run(void);
-  void setAlarm(void);
-  int isTimeOfAlarm(void);
-
+  void sendNTPpacket(IPAddress& address);
 
 };
 
