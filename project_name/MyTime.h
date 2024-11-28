@@ -6,13 +6,16 @@
 #ifndef MYTIME_H_
 #define MYTIME_H_
 #include "time.h"
+#include "Ethernet.h"
+#include "EthernetUdp.h"
+#include "SPI.h"
 
 class MyTime {
   int Ahour, Amin;
   time_t t;
 
   MyTime();
-  MyTime();
+
   ~MyTime();
   void init(void);
   void run(void);
