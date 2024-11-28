@@ -6,10 +6,10 @@
 #include "MyTime.h"
 
 
-MyTime::MyTime();
-MyTime::MyTime();
-MyTime::~MyTime();
-void MyTime::init(void);
-void MyTime::run(void);
-void MyTime::setAlarm(void);
-int MyTime::isTimeOfAlarm(void);
+MyTime::MyTime(){;}
+
+MyTime::~MyTime(){;}
+void MyTime::init(void){;}
+void MyTime::run(void){;}
+void MyTime::setAlarm(void){;}
+int MyTime::isTimeOfAlarm(void){return 0;}

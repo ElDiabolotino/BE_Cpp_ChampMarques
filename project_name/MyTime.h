@@ -12,7 +12,7 @@ class MyTime {
   time_t t;
 
   MyTime();
-  MyTime();
+
   ~MyTime();
   void init(void);
   void run(void);
