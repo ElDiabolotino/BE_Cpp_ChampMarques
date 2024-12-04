@@ -50,7 +50,5 @@ int CapLum::seuilDetect(int seuil){
   if (seuil> *rit){
     int diff = 0;
   }
-
-
-
+  return diff;
 }
