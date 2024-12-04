@@ -6,7 +6,6 @@
 
 #include "ActioBuzzerV2.h"
 
-
 ActioBuzzerV2::ActioBuzzerV2(uint8_t pin, uint8_t mode){
     Pin = pin;
     Mode = mode;
@@ -24,14 +23,14 @@ void ActioBuzzerV2::run(String melody_name){
 }
 
 void ActioBuzzerV2::PlayMelody(String melody_name){
-    int temp = tempo.at(melody_name);
-    for(int i = 0; i < (getsize(melody.at(melody_name))); i++) {
-        float note = melody.at(melody_name)[i];
-        int beat = beats.at(melody_name)[i];
+    int temp = tempo[melody_name];
+    for(int i = 0; i < (getsize(melody[melody_name])); i++) {
+        float note = melody[melody_name][i];
+        int beat = beats[melody_name][i];
         if(note == ' ') {
             delay(beat * temp);
         } else {
-            PlayNote(note, beat * temp);
+            playNote(note, beat * temp);
         }
         delay(temp / 2);    /* delay between notes */
     }
@@ -43,10 +42,8 @@ void ActioBuzzerV2::PlayNote(float note, int dur){
     tone(Pin, note, duration);
     int Pause = dur*10;
     delay(Pause);
-        //digitalWrite(buzzerPin, HIGH);
+     //digitalWrite(buzzerPin, HIGH);
     //delayMicroseconds(tone);
     //digitalWrite(buzzerPin, LOW);
     //delayMicroseconds(tone);
-  }
 }
-

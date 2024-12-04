@@ -10,7 +10,7 @@
 #include "Repertoire.h"
 
 
-class ActioBuzzerV2:public Actionneur{
+class ActioBuzzerV2:public Actionneur, public Repertoire {
     uint8_t Pin;
     uint8_t Mode;
 
@@ -21,6 +21,6 @@ class ActioBuzzerV2:public Actionneur{
     void init(void);
     void run(String Mel_name);
     void PlayMelody(String melody_name);
-    void PlayNote(char note, int duration);
+    void PlayNote(float note, int duration);
 };
 #endif

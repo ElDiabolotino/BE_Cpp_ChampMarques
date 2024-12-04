@@ -4,14 +4,13 @@
  * @brief Classe Repertoire de mélodies
  *********************************************************************/
 
-#ifndef CAPTOUCHER_H_
-#define CAPTOUCHER_H_
+#ifndef REPERTOIRE_H_
+#define REPERTOIRE_H_
+#include <map>
 #include "Arduino.h"
-#include "string"
+//#include "string" String.h
 #include "Melodies.h"
-#include "map"
 
-using namespace std;
 
 class Repertoire{
     public :
