@@ -6,12 +6,11 @@
 
 #ifndef CAPTOUCHER_H_
 #define CAPTOUCHER_H_
+#include <map>
 #include "Arduino.h"
-#include "string"
+//#include "string"
 #include "Melodies.h"
-#include "map"
 
-using namespace std;
 
 class Repertoire{
     public :

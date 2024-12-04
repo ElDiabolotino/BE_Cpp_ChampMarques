@@ -43,3 +43,14 @@ void CapLum::updateCapteur(void){
   updateMesCapt();
   updateResistCapt();
 }
+
+int CapLum::seuilDetect(int seuil){
+  int diff = 1;
+  for (std::deque<float>::reverse_iterator rit=resistValues.rbegin();rit!=(resistValues.rbegin()+5);rit++)
+  if (seuil> *rit){
+    int diff = 0;
+  }
+
+
+
+}

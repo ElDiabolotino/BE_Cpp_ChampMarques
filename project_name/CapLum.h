@@ -5,9 +5,10 @@
  *********************************************************************/
 #ifndef CAPLUM_H_
 #define CAPLUM_H_
+#include <deque>
 #include "Capteur.h"
 #include "Arduino.h"
-#include "deque"
+
 
 class CapLum : public Capteur {
   int lumPin;
@@ -25,7 +26,7 @@ class CapLum : public Capteur {
     int updateMesCapt(void);
     float updateResistCapt(void);
     void updateCapteur(void);
-
+    int seuilDetect(int seuil);
 };
 
 #endif
