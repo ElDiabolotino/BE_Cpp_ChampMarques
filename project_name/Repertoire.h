@@ -22,7 +22,7 @@ class Repertoire(){
 
     public :
     Repertoire();
-    Repertoire(String mel, int * b, int t);
+    //Repertoire(map<String,float*> mel, map<String,int*> b, map<String,int> t);
     void Add(String mel_name, String mel_notes, int* mel_beats, int mel_tempo);
     void init(void);
     int getsize(void);
