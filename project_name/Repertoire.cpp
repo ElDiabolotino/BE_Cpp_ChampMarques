@@ -4,26 +4,26 @@
  * @brief Classe Repertoire de mélodies
  *********************************************************************/
 #include "Repertoire.h"
-#include "Melodies.h"
-#include "ActioBuzzerV2.h"
+
+
 
 Repertoire::Repertoire(){
-    melody["vide"] = [0] ;
-    beats["vide"] = [0] ;
+    melody["vide"] = {0} ;
+    beats["vide"] = {0} ;
     tempo["vide"] = 0 ;
 }
-Repertoire::void Add(String mel_name, float* mel_notes, int *mel_beats, int mel_tempo){
+void Repertoire::Add(String mel_name, float* mel_notes, int *mel_beats, int mel_tempo){
     melody[mel_name] = mel_notes;
     beats[mel_name] = mel_beats;
     tempo[mel_name] = mel_tempo;
 }
 
-Repertoire::void init(void){
-    Add("Melodie 0", mel_n_0, mel_b_0, mel_t_0);
-    Add("Melodie 1", mel_n_1, mel_b_1, mel_t_0)    
+void Repertoire::init(void){
+    Add("Melodie 0", Mel_n_0, Mel_b_0, Mel_t_0);
+    Add("Melodie 1", Mel_n_1, Mel_b_1, Mel_t_0);    
 }
 
-Repertoire::int getsize(float *notes)
+int Repertoire::getsize(float *notes)
 {
     return sizeof(notes);
 }

@@ -1,6 +1,6 @@
 #include "ActioLCD.h"
 #include "CapToucher.h"
-#include "ActioBuzzer.h"
+#include "ActioBuzzerV2.h"
 ActioLCD myLCD;
 
 

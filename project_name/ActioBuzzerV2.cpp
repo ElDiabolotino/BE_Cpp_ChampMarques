@@ -5,9 +5,9 @@
  *********************************************************************/
 
 #include "ActioBuzzerV2.h"
-#include "Repertoire.h"
 
-ActioBuzzerV2::ActioBuzzeV2(uint8_t pin, uint8_t mode){
+
+ActioBuzzerV2::ActioBuzzerV2(uint8_t pin, uint8_t mode){
     Pin = pin;
     Mode = mode;
 }
@@ -24,14 +24,14 @@ void ActioBuzzerV2::run(String melody_name){
 }
 
 void ActioBuzzerV2::PlayMelody(String melody_name){
-    int temp = tempo[melody];
-    for(int i = 0; i < (getsize(melody[melody_name])); i++) {
-        float note = melody[melody_name][i];
-        int beat = beats[melody_name][i];
+    int temp = tempo.at(melody_name);
+    for(int i = 0; i < (getsize(melody.at(melody_name))); i++) {
+        float note = melody.at(melody_name)[i];
+        int beat = beats.at(melody_name)[i];
         if(note == ' ') {
             delay(beat * temp);
         } else {
-            playNote(note, beat * temp);
+            PlayNote(note, beat * temp);
         }
         delay(temp / 2);    /* delay between notes */
     }

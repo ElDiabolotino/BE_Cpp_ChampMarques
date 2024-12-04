@@ -37,8 +37,6 @@ int CapToucher::getEtat(){
 int CapToucher::updateCapt(void){
     etat = getCapt();
     return etat;
-
-
 }
 /*
 int CapToucher::getEtatLed(void){

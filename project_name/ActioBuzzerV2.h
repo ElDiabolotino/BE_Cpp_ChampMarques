@@ -7,10 +7,10 @@
 #ifndef MYBUZZERV2_H_
 #define MYBUZZERV2_H_
 #include "Actionneur.h"
-#include "Arduino.h"
-#include <string>
+#include "Repertoire.h"
 
-class ActioBuzzerV2::public Actionneur{
+
+class ActioBuzzerV2:public Actionneur{
     uint8_t Pin;
     uint8_t Mode;
 
@@ -22,4 +22,5 @@ class ActioBuzzerV2::public Actionneur{
     void run(String Mel_name);
     void PlayMelody(String melody_name);
     void PlayNote(char note, int duration);
-}
+};
+#endif

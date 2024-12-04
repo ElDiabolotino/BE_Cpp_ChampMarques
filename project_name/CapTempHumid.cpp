@@ -6,18 +6,18 @@
 #include "CapTempHumid.h"
 
 
-CapTempHumid::CapTempHumid(void): dht(DHTPIN,DHTTYPE){
+CapTempHumid::CapTempHumid(void): dht(DHTPIN,DHTTYPE),mySize(10),MesHumid(10,0.0),MesTempe(10,0.0){
   mesCapt[0] = 0;
   mesCapt[1] = 0;
 }
 
-CapTempHumid::CapTempHumid(int wioLink): dht(DHTPIN,DHTTYPE){
+CapTempHumid::CapTempHumid(int size): dht(DHTPIN,DHTTYPE),mySize(size),MesHumid((int) size/2,0.0),MesTempe((int) size/2,0.0){
   mesCapt[0] = 0;
   mesCapt[1] = 0;
-  if (wioLink){
+  //if (wioLink){
   //  pinMode(PIN_GROVE_POWER, OUTPUT);
   //  digitalWrite(PIN_GROVE_POWER,1);
-  }
+  //}
 }
 
 CapTempHumid::~CapTempHumid(void){}
@@ -35,6 +35,12 @@ float CapTempHumid::getTemp(void){
 }
 
 int CapTempHumid::updateMesCapt(void){
-  return dht.readTempAndHumidity(mesCapt);
+
+  int succes = dht.readTempAndHumidity(mesCapt);
+  if (MesHumid.size()>=mySize) MesHumid.pop_front();
+  MesHumid.push_back(mesCapt[0]);
+  if (MesTempe.size()>=mySize) MesTempe.pop_front();
+  MesTempe.push_back(mesCapt[1]);
+  return succes;
 }
 

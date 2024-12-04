@@ -6,19 +6,22 @@
 #include "CapLum.h"
 
 
-CapLum::CapLum(void){
+CapLum::CapLum(void):resistValues(10,0.0){
   lumPin = 0;
   resistCapt = 0;
+  mySize = 20;
 }
-CapLum::CapLum(int Pin){
+CapLum::CapLum(int Pin,int size):mySize(size),resistValues(size/2,0.0){
   lumPin = Pin;
   resistCapt = 0;
+  
 }
 CapLum::~CapLum(){}
 
 void CapLum::init(void){
   updateCapteur();
 }
+
 float CapLum::getResistCapt(void){
   return resistCapt;
 }
@@ -31,6 +34,9 @@ int CapLum::updateMesCapt(void){
 }
 float CapLum::updateResistCapt(void){
   resistCapt = (float) (1023-mesCapt)*10/mesCapt;
+  if (resistValues.size()>=mySize) resistValues.pop_front();
+  resistValues.push_back(resistCapt);
+
   return resistCapt;
 }
 void CapLum::updateCapteur(void){

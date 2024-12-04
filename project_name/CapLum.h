@@ -7,15 +7,17 @@
 #define CAPLUM_H_
 #include "Capteur.h"
 #include "Arduino.h"
-
+#include "deque"
 
 class CapLum : public Capteur {
   int lumPin;
   int mesCapt;
   float resistCapt;
+  int mySize;
+  std::deque<float> resistValues;
     public:
     CapLum();
-    CapLum(int Pin);
+    CapLum(int Pin,int size);
     ~CapLum();
     void init(void);
     float getResistCapt(void);

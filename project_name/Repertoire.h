@@ -8,24 +8,23 @@
 #define CAPTOUCHER_H_
 #include "Arduino.h"
 #include "string"
-#include <map>
-#include <iostream>
-#include <vector>
-#include <list>
-#include <set>
+#include "Melodies.h"
+#include "map"
+
 using namespace std;
 
-class Repertoire(){
-    map<String,float*> melody;
-    map<String, int*> beats;
-    map< String,int> tempo;
-
+class Repertoire{
     public :
+
+    std::map<String,float*> melody;
+    std::map<String, int*> beats;
+    std::map< String,int> tempo;
+
     Repertoire();
-    //Repertoire(map<String,float*> mel, map<String,int*> b, map<String,int> t);
-    void Add(String mel_name, String mel_notes, int* mel_beats, int mel_tempo);
+    //Repertoire(String name, map<String,float*> mel, map<String,int*> b, map<String,int> t);
+    void Add(String mel_name, float* mel_notes, int* mel_beats, int mel_tempo);
     void init(void);
-    int getsize(void);
+    int getsize(float *notes);
 };
 
 #endif
