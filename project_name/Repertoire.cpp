@@ -8,7 +8,9 @@
 #include "ActioBuzzerV2.h"
 
 Repertoire::Repertoire(){
-    melody 
+    melody["vide"] = [0] ;
+    beats["vide"] = [0] ;
+    tempo["vide"] = 0 ;
 }
 Repertoire::void Add(String mel_name, float* mel_notes, int *mel_beats, int mel_tempo){
     melody[mel_name] = mel_notes;

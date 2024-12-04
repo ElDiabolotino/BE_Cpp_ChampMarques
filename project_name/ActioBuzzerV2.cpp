@@ -38,9 +38,11 @@ void ActioBuzzerV2::PlayMelody(String melody_name){
 
 }
 
-void ActioBuzzerV2::PlayNote(float note, int duration){
-    for (long i = 0; i < duration * 1000L; i += tone * 2) {
-        tone(Pin, note, duration);
+void ActioBuzzerV2::PlayNote(float note, int dur){
+    int duration = 1000*dur;
+    tone(Pin, note, duration);
+    int Pause = dur*10;
+    delay(Pause);
         //digitalWrite(buzzerPin, HIGH);
     //delayMicroseconds(tone);
     //digitalWrite(buzzerPin, LOW);
