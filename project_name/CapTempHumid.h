@@ -11,17 +11,18 @@
 #include "deque"
 
 #define DHTTYPE DHT11
-#define DHTPIN 0
+
 
 class CapTempHumid : public Capteur {
   float mesCapt[2];
+  int DHTPIN;
   int mySize;
   DHT dht;
   std::deque<float> MesHumid;
   std::deque<float> MesTempe; 
     public:
     CapTempHumid();
-    CapTempHumid(int size);
+    CapTempHumid(int Pin,int size);
     ~CapTempHumid();
     void init(void);
     int updateMesCapt(void);

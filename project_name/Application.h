@@ -24,7 +24,7 @@ class Application {
   ActioLED led;
 
 public : 
-Application();
+Application(int PinBuz,int PinTHu, int PinTou, int PinLum, int PinLed);
 ~Application();
 void run(void);
 void init(void);

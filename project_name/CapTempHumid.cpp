@@ -6,12 +6,14 @@
 #include "CapTempHumid.h"
 
 
-CapTempHumid::CapTempHumid(void): dht(DHTPIN,DHTTYPE),mySize(10),MesHumid(10,0.0),MesTempe(10,0.0){
+CapTempHumid::CapTempHumid(void): dht(0,DHTTYPE),mySize(10),MesHumid(10,0.0),MesTempe(10,0.0){
+  DHTPIN = 0;
   mesCapt[0] = 0;
   mesCapt[1] = 0;
 }
 
-CapTempHumid::CapTempHumid(int size): dht(DHTPIN,DHTTYPE),mySize(size),MesHumid((int) size/2,0.0),MesTempe((int) size/2,0.0){
+CapTempHumid::CapTempHumid(int Pin,int size): dht(Pin,DHTTYPE),mySize(size),MesHumid((int) size/2,0.0),MesTempe((int) size/2,0.0){
+  DHTPIN = Pin;
   mesCapt[0] = 0;
   mesCapt[1] = 0;
   //if (wioLink){

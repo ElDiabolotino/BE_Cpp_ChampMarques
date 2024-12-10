@@ -27,7 +27,7 @@
 
 
 class Repertoire{
-    public :
+    protected:
     //Base Melodies
     //Melodie 0
     float Mel_n_0[11];
@@ -42,7 +42,7 @@ class Repertoire{
     std::map<String,float*> melody;
     std::map<String, int*> beats;
     std::map< String,int> tempo;
-
+    public :
     Repertoire();
     //Repertoire(String name, map<String,float*> mel, map<String,int*> b, map<String,int> t);
     void Add(String mel_name, float mel_notes[], int mel_beats[], int mel_tempo);
