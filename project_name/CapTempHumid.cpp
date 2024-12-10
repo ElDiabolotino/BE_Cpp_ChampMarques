@@ -61,7 +61,17 @@ int* CapTempHumid::seuilDetect (float* seuil){
   return diff;
 }
 
+void CapTempHumid::clear(int which){
 
+  if (which ==0){
+    MesTempe.clear();
+    MesHumid.clear();
+  } else if (which ==1)
+    MesHumid.clear();
+  else if (which == 2)
+    MesTempe.clear();
+
+}
 
 
 

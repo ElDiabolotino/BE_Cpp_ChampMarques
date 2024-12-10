@@ -7,7 +7,7 @@ ActioLCD myLCD;
 const int TouchPin = 3;
 const int LedPin = 7;
 const int BuzzPin = 6;
-ActioBuzzerV2 ab(BuzzPin,OUTPUT);
+//ActioBuzzerV2 ab(BuzzPin,OUTPUT);
 CapToucher ct(TouchPin);
 
 void setup() 
@@ -15,7 +15,7 @@ void setup()
   // put your setup code here, to run once:
   //myLCD.init();
   //ct.init();
-  ab.init();
+  //ab.init();
   //pinMode(LedPin,OUTPUT);
 
 }

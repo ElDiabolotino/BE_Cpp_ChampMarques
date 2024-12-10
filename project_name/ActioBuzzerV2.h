@@ -8,15 +8,16 @@
 #define MYBUZZERV2_H_
 #include "Actionneur.h"
 #include "Repertoire.h"
+#include "CapToucher.h"
 
 
-class ActioBuzzerV2:public Actionneur, public Repertoire {
+class ActioBuzzerV2:public Actionneur, public Repertoire,public CapToucher {
     uint8_t Pin;
     uint8_t Mode;
 
     public:
     ActioBuzzerV2();
-    ActioBuzzerV2(uint8_t p, uint8_t m);
+    ActioBuzzerV2(uint8_t pin, uint8_t mode, int PinTouch);
     ~ActioBuzzerV2();
     void init(void);
     void run(String Mel_name);

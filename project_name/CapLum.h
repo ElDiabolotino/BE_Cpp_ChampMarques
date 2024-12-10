@@ -27,6 +27,7 @@ class CapLum : public Capteur {
     float updateResistCapt(void);
     void updateMesCapt(void);
     int seuilDetect(int seuil);
+    void clear (void);
 };
 
 #endif

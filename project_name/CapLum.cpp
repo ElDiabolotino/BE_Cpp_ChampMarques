@@ -52,3 +52,7 @@ int CapLum::seuilDetect(int seuil){
   }
   return diff;
 }
+
+void CapLum::clear (void){
+  resistValues.clear();
+}

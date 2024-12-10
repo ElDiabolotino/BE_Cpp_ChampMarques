@@ -6,7 +6,8 @@
 
 #include "ActioBuzzerV2.h"
 
-ActioBuzzerV2::ActioBuzzerV2(uint8_t pin, uint8_t mode){
+ActioBuzzerV2::ActioBuzzerV2(uint8_t pin, uint8_t mode,int PinTouch):CapToucher(PinTouch){
+
     Pin = pin;
     Mode = mode;
 }
@@ -17,6 +18,7 @@ void ActioBuzzerV2::init(){
     pinMode(Pin,Mode);
     digitalWrite(Pin,LOW);
     Repertoire::init();
+    CapToucher::init();
 }
 
 void ActioBuzzerV2::run(String melody_name){
@@ -26,6 +28,10 @@ void ActioBuzzerV2::run(String melody_name){
 void ActioBuzzerV2::PlayMelody(String melody_name){
     int temp = tempo[melody_name];
     for(int i = 0; i < (getsize(melody[melody_name])); i++) {
+      updateMesCapt();
+        if (getEtat()==HIGH){
+          break;
+        }
         float note = melody[melody_name][i];
         int beat = beats[melody_name][i];
         if(note == ' ') {

@@ -7,7 +7,7 @@
  #include "Application.h"
 using namespace std;
 
-Application::Application(int PinBuz,int PinTHu, int PinTou, int PinLum, int PinLed):Buzzer(PinBuz,OUTPUT),TempHumid(PinTHu, 10),Toucher(PinTou),Lumiere(PinLum,20),Ecran(),led(PinLed),Horloge(){
+Application::Application(int PinBuz,int PinTHu, int PinTou, int PinLum, int PinLed):Buzzer(PinBuz,OUTPUT,PinTou),TempHumid(PinTHu, 10),Toucher(PinTou),Lumiere(PinLum,20),Ecran(),led(PinLed),Horloge(){
   tempsMesure = 0;
   seuilMesTH[2]=(35.0,25.0);
   musics = 0;
@@ -25,19 +25,12 @@ void Application::init(){
 
 void Application::run(){
   
-  
   if (tempsMesure == 5){
     TempHumid.updateMesCapt();
     Lumiere.updateMesCapt();
     Toucher.updateMesCapt();
     tempsMesure = 0;
   } else {
-    Toucher.updateMesCapt();
-    if (Toucher.getEtat()){
-      Ecran.affMsg("Mel 0 playing");
-      Buzzer.run("Melodie 0");
-      Ecran.clear();
-    }
     Lumiere.updateMesCapt();
     Ecran.clear();
     Ecran.whereCur(0,0);
@@ -58,12 +51,18 @@ void Application::run(){
       Ecran.affMsg("H Lum");
       musics+=1;
     }
+    Toucher.updateMesCapt();
     if  (musics==1){
-      Buzzer.run("Melodie 1");
+      Buzzer.run("Melodie 0");
     } else if (musics==2){
       Buzzer.run("Melodie 1");
     } else if (musics==3){
       Buzzer.run("Melodie 1");
+    }
+    Toucher.updateMesCapt();
+    if ((Toucher.getEtat()==HIGH) && musics){
+      TempHumid.clear();
+      Lumiere.clear();
     }
     musics = 0;
     tempsMesure += 1;
