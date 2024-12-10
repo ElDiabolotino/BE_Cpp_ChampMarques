@@ -12,8 +12,7 @@
   * @class Capteur
   * @brief Classe Capteur 
 */    
-class Capteur : public Driver
-{
+class Capteur : public Driver{
   public :
     /**
      * @fn Capteur();

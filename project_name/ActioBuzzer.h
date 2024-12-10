@@ -7,7 +7,7 @@
 #define MYBUZZER_H_
 #include "Actionneur.h"
 #include "Arduino.h"
-#include <string>
+
 
 /**
   * @class ActioBuzzer

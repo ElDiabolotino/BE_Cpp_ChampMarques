@@ -6,8 +6,8 @@
 #ifndef CAPLUM_H_
 #define CAPLUM_H_
 #include <deque>
-#include "Capteur.h"
 #include "Arduino.h"
+#include "Capteur.h"
 
 
 class CapLum : public Capteur {

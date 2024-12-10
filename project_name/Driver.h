@@ -3,8 +3,8 @@
  * @author Marques Raphaël/ Champagne Julie
  * @brief Fichier header de l'application
  *********************************************************************/
-#ifndef APPLICATION_H_
-#define APPLICATION_H_
+#ifndef DRIVER_H_
+#define DRIVER_H_
 
 /**
   * @class Driver

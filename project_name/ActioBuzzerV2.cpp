@@ -23,7 +23,7 @@ void ActioBuzzerV2::run(String melody_name){
 }
 
 void ActioBuzzerV2::PlayMelody(String melody_name){
-    int temp = tempo[melody_name];
+    /*int temp = tempo[melody_name];
     for(int i = 0; i < (getsize(melody[melody_name])); i++) {
         float note = melody[melody_name][i];
         int beat = beats[melody_name][i];
@@ -32,8 +32,8 @@ void ActioBuzzerV2::PlayMelody(String melody_name){
         } else {
             PlayNote(note, beat * temp);
         }
-        delay(temp / 2);    /* delay between notes */
-    }
+        delay(temp / 2);    /* delay between notes 
+    }*/
 
 }
 

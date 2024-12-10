@@ -4,7 +4,7 @@
  * @brief Classe pour le driver CapToucher
  *********************************************************************/
 #include "CapToucher.h"
-#include "Arduino.h"
+
 
 CapToucher::CapToucher(){
     touchPin = 0;;
