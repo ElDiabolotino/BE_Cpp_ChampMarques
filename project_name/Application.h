@@ -13,6 +13,7 @@
 #include "ActioBuzzerV2.h"
 #include "ActioLCD.h"
 #include "ActioLED.h"
+#include "UTCTime.h"
 
 
 class Application {
@@ -22,7 +23,10 @@ class Application {
   ActioBuzzerV2 Buzzer;
   ActioLCD Ecran;
   ActioLED led;
-
+  UTCTime Horloge;
+  int tempsMesure;
+  float seuilMesTH[2];
+  int musics;
 public : 
 Application(int PinBuz,int PinTHu, int PinTou, int PinLum, int PinLed);
 ~Application();

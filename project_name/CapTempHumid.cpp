@@ -27,6 +27,7 @@ CapTempHumid::~CapTempHumid(void){}
 void CapTempHumid::init(){
   Wire.begin();
   dht.begin();
+  updateMesCapt();
 }
 
 float CapTempHumid::getHumid(void){
@@ -36,14 +37,13 @@ float CapTempHumid::getTemp(void){
   return mesCapt[1];
 }
 
-int CapTempHumid::updateMesCapt(void){
+void CapTempHumid::updateMesCapt(void){
 
   int succes = dht.readTempAndHumidity(mesCapt);
   if (MesHumid.size()>=mySize) MesHumid.pop_front();
   MesHumid.push_back(mesCapt[0]);
   if (MesTempe.size()>=mySize) MesTempe.pop_front();
   MesTempe.push_back(mesCapt[1]);
-  return succes;
 }
 
 int* CapTempHumid::seuilDetect (float* seuil){

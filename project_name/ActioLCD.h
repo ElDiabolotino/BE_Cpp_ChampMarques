@@ -6,6 +6,7 @@
 #ifndef MYLCD_H_
 #define MYLCD_H_
 #include "Actionneur.h"
+#include "Arduino.h"
 #include "rgb_lcd.h"
 
 /**
@@ -73,10 +74,10 @@ class ActioLCD : public Actionneur
      * @fn virtual void affMsg(char *Msg)
      * @brief Fonction d'affichage d'un string
     */
-    void affMsg(char *Msg);
+    void affMsg(const char* Msg);
 
     void run(void);
-
+    void clear(void);
 };
 
 #endif

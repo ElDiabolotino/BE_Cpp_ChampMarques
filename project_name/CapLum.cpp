@@ -19,7 +19,7 @@ CapLum::CapLum(int Pin,int size):mySize(size),resistValues(size/2,0.0){
 CapLum::~CapLum(){}
 
 void CapLum::init(void){
-  updateCapteur();
+  updateMesCapt();
 }
 
 float CapLum::getResistCapt(void){
@@ -28,7 +28,7 @@ float CapLum::getResistCapt(void){
 int CapLum::getMesCapt (void){
   return mesCapt;
 }
-int CapLum::updateMesCapt(void){
+int CapLum::updateMesLum(void){
   mesCapt = analogRead(lumPin);
   return mesCapt;
 }
@@ -39,15 +39,15 @@ float CapLum::updateResistCapt(void){
 
   return resistCapt;
 }
-void CapLum::updateCapteur(void){
-  updateMesCapt();
+void CapLum::updateMesCapt(void){
+  updateMesLum();
   updateResistCapt();
 }
 
 int CapLum::seuilDetect(int seuil){
   int diff = 1;
   for (std::deque<float>::reverse_iterator rit=resistValues.rbegin();rit!=(resistValues.rbegin()+5);rit++)
-  if (seuil> *rit){
+  if (seuil< *rit){
     int diff = 0;
   }
   return diff;

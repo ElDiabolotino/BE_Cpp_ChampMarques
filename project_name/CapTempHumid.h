@@ -25,7 +25,7 @@ class CapTempHumid : public Capteur {
     CapTempHumid(int Pin,int size);
     ~CapTempHumid();
     void init(void);
-    int updateMesCapt(void);
+    void updateMesCapt(void);
     float getHumid(void);
     float getTemp(void);
     int* seuilDetect (float* seuil);

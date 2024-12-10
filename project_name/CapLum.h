@@ -23,9 +23,9 @@ class CapLum : public Capteur {
     void init(void);
     float getResistCapt(void);
     int getMesCapt(void);
-    int updateMesCapt(void);
+    int updateMesLum(void);
     float updateResistCapt(void);
-    void updateCapteur(void);
+    void updateMesCapt(void);
     int seuilDetect(int seuil);
 };
 

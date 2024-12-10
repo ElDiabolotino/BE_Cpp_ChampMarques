@@ -23,7 +23,7 @@ void CapToucher::init(void){
 }
 
 void CapToucher::run(void){
-    updateCapt();
+    updateMesCapt();
 }
 
 int CapToucher::getCapt(void){
@@ -34,9 +34,8 @@ int CapToucher::getEtat(){
   return etat;
 }
 
-int CapToucher::updateCapt(void){
+void CapToucher::updateMesCapt(void){
     etat = getCapt();
-    return etat;
 }
 /*
 int CapToucher::getEtatLed(void){

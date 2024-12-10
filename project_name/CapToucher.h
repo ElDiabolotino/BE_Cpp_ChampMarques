@@ -19,7 +19,7 @@ class CapToucher : public Capteur {
     ~CapToucher();
     void init(void);
     int getCapt(void);
-    int updateCapt(void);//à enlever
+    void updateMesCapt(void);
     int getEtat(void);
     void run(void);
 

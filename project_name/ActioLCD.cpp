@@ -6,10 +6,8 @@
 #include "ActioLCD.h"
 
 
-ActioLCD::ActioLCD()
+ActioLCD::ActioLCD():lcd()
 {
-  lcd.clear();
-  lcd.noDisplay();
   isOn = 0;
   isCurs = 0;
   isBlink = 0;
@@ -72,16 +70,20 @@ void ActioLCD::affChar(char c,int Col, int Row)
 void ActioLCD::whereCur(int Col, int Row){
   lcd.setCursor(Col,Row);
 }
-void ActioLCD::affMsg(char *Msg){
+void ActioLCD::affMsg(const char* Msg){
   lcd.print(Msg);
 }
 void ActioLCD::init(void)
 {
   lcd.begin(16,2);
-  lcd.setCursor(1,1);
+  lcd.setCursor(0,0);
   lcd.print(".");
+  lcd.clear();
+  setParam(1,0,0);
 }
-
+void ActioLCD::clear(){
+  lcd.clear();
+}
 void ActioLCD::run(void)
 {
   lcd.clear();
