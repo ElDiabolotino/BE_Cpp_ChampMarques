@@ -5,6 +5,7 @@
  *********************************************************************/
 #include "Repertoire.h"
 
+//ATTENTION ce fichier n'est pas utilisé dans la version 1.0 de l'application !!!!
 
 
 Repertoire::Repertoire(){

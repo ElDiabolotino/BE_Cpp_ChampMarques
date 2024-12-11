@@ -8,6 +8,7 @@
 #include "Actionneur.h"
 #include "Arduino.h"
 
+//ATTENTION ce fichier n'est pas utilisé dans la version 1.0 de l'application !!!!
 
 /**
   * @class ActioBuzzer

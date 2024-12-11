@@ -5,6 +5,8 @@
  *********************************************************************/
 #include "MyTime.h"
 
+//ATTENTION ce fichier n'est pas utilisé dans la version 1.0 de l'application !!!!
+//Ce fichier a été récupéré d'un exmple Arduino
 
 MyTime::MyTime(){
   packetBuffer = new byte[NTP_PACKET_SIZE];

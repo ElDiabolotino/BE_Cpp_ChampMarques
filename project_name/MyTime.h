@@ -5,6 +5,11 @@
  *********************************************************************/
 #ifndef MYTIME_H_
 #define MYTIME_H_
+
+//ATTENTION ce fichier n'est pas utilisé dans la version 1.0 de l'application !!!!
+//Ce fichier a été récupéré d'un exmple Arduino
+
+
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
 

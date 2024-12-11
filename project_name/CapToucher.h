@@ -17,9 +17,13 @@ class CapToucher : public Capteur {
     CapToucher();
     CapToucher(int Pin);
     ~CapToucher();
+    // Initialise que la broche
     void init(void);
+    //assesseur de la valeur du capteur sans modifier l'attribut etat
     int getCapt(void);
+    //Fonction de Mise à jour de l'état par mesure du capteur en digital pin
     void updateMesCapt(void);
+    //Assesseur de l'attribut etat
     int getEtat(void);
     void run(void);
 

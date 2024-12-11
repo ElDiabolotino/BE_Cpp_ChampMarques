@@ -5,6 +5,10 @@
  *********************************************************************/
 #include "UTCTime.h"
 
+//ATTENTION ce fichier n'est pas utilisé dans la version 1.0 de l'application !!!!
+
+
+
 UTCTime::UTCTime ():MyTime(){
   hour = 0;
   min = 0;

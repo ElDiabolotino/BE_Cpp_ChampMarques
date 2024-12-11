@@ -6,9 +6,10 @@
 #ifndef REPERTOIRE_H_
 #define REPERTOIRE_H_
 
+//ATTENTION ce fichier n'est pas utilisé dans la version 1.0 de l'application !!!!
+
 #include <map>
 #include "Arduino.h"
-//#include "string" String.h
 //#include "Melodies.h"
 
 #define C_3 261.63
@@ -30,9 +31,9 @@ class Repertoire{
     protected:
     //Base Melodies
     //Melodie 0
-    float Mel_n_0[11];
-    int Mel_b_0[11];
-    int Mel_t_0;
+    float Mel_n_0[11]; //Notes de la mélodie
+    int Mel_b_0[11];   //Durées des notes de la mélodie
+    int Mel_t_0;       //Pulsation de la mélodie
 
     //Melodie 1   
     float Mel_n_1[14];

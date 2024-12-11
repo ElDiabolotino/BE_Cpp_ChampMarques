@@ -1,8 +1,9 @@
 #include "Application.h"
 
 
-  //(PinBuz=12,PinTHu=14,PinTou=13,PinLum=0,PinLed=15)
+  //(PinBuzzer=12,PinTempHumid=14,PinTactile=13,PinLumiere=0,PinLed=15)
   Application Appli(12,14,13,0,15);
+  
 void setup() 
 {
   // put your setup code here, to run once:

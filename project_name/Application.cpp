@@ -1,11 +1,11 @@
 /*********************************************************************
  * @file  Application.cpp
- * @author "Raphaël Marques" Julie Champagne jfgkfd
+ * @author "Raphaël Marques" Julie Champagne
  * @brief Fichier source de l'application
  *********************************************************************/
 
  #include "Application.h"
-using namespace std;
+
 
 Application::Application(int PinBuz,int PinTHu, int PinTou, int PinLum, int PinLed):Buzzer(PinBuz,OUTPUT,PinTou),TempHumid(PinTHu, 10),Toucher(PinTou),Lumiere(PinLum,20),Ecran(),led(PinLed),Horloge(){
   tempsMesure = 0;
@@ -53,10 +53,10 @@ void Application::run(){
 
   if (musics!=0){
     led.setLED();
-    Buzzer.PlayMelody(musics); //User has to touch the sensor to stop the "Melody"
+    Buzzer.PlayMelody(musics); // L'utilisateur doit appuyer sur le pad tactile pour arrêter la mélodie
 
     led.resetLED();
-    delay(20000);
+    delay(20000); // Attendre 20s pour que le capteur de T&H puisse changer de valeur
     TempHumid.clear();
     Lumiere.clear();
     TempHumid.updateMesCapt();
@@ -72,9 +72,9 @@ void Application::refreshScreen (void){
   Ecran.clear();
   Ecran.whereCur(0,0);
   Ecran.affMsg("Hum: ");
-  Ecran.affMsg((to_string((int)TempHumid.getHumid()).c_str()));
+  Ecran.affMsg((to_string((int)TempHumid.getHumid())).c_str());
   Ecran.affMsg("%,T: ");
-  Ecran.affMsg((to_string((int)TempHumid.getTemp()).c_str()));
+  Ecran.affMsg((to_string((int)TempHumid.getTemp())).c_str());
   Ecran.affMsg(" C");
 }
 

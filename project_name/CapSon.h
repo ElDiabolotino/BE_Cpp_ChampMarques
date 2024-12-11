@@ -5,6 +5,9 @@
  *********************************************************************/
 #ifndef CAPSON_H_
 #define CAPSON_H_
+
+//ATTENTION ce fichier n'est pas utilisé dans la version 1.0 de l'application !!!!
+
 #include "Capteur.h"
 #include "Arduino.h"
 

@@ -6,6 +6,7 @@
 #include "ActioLCD.h"
 
 
+
 ActioLCD::ActioLCD():lcd()
 {
   isOn = 0;

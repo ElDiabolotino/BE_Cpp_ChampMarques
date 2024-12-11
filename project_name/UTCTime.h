@@ -5,8 +5,10 @@
  *********************************************************************/
  #ifndef UTCTIME_H_
 #define UTCTIME_H_
+
+//ATTENTION ce fichier n'est pas utilisé dans la version 1.0 de l'application !!!!
+
 #include "MyTime.h"
-#include "string"
 
 class UTCTime : public MyTime{
   int hour, min, sec;
