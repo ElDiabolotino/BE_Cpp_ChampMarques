@@ -15,23 +15,11 @@ ActioLCD::ActioLCD():lcd()
   
 ActioLCD::ActioLCD(int On,int Cur, int Blin)
 {
-  lcd.clear();
-  if (On){
-    lcd.display();
-    isOn = 1;
-  } else {
-    lcd.noDisplay();
-    isOn = 0;
-  }
+  isOn = On;
   isCurs = Cur;
   isBlink = Blin;
 }
 
-ActioLCD::~ActioLCD()
-{
-  lcd.clear();
-  lcd.noDisplay();
-}  
 void ActioLCD::setParam(int On,int Cur, int Blin){
   setIsOn(On);
   setIsCurs(Cur);
@@ -77,7 +65,6 @@ void ActioLCD::init(void)
 {
   lcd.begin(16,2);
   lcd.setCursor(0,0);
-  lcd.print(".");
   lcd.clear();
   setParam(1,0,0);
 }
@@ -86,5 +73,5 @@ void ActioLCD::clear(){
 }
 void ActioLCD::run(void)
 {
-  lcd.clear();
+  ;
 }

@@ -24,7 +24,20 @@ void ActioBuzzerV2::init(){
 void ActioBuzzerV2::run(String melody_name){
     PlayMelody(melody_name);
 }
-
+void ActioBuzzerV2::PlayMelody(void){
+  int i = 0;
+  while (i<1000){
+  updateMesCapt();
+  if (getEtat()==HIGH){
+    break;
+  }
+  digitalWrite(Pin, HIGH);
+  delay(50);
+  digitalWrite(Pin, LOW);
+  delay(50);
+  i++;
+  }
+}
 void ActioBuzzerV2::PlayMelody(String melody_name){
     int temp = tempo[melody_name];
     for(int i = 0; i < (getsize(melody[melody_name])); i++) {
@@ -41,13 +54,31 @@ void ActioBuzzerV2::PlayMelody(String melody_name){
         }
         delay(temp / 2);    // delay between notes 
     }
+  /*int tuneSize = sizeof(melody[melody_name]) / sizeof(float);
+  // iterate over the notes of the tune:
+  for (int thisNote = 0; thisNote < tuneSize; thisNote++) {
 
+    // For details on calculating the note duration using the tempo and the note type,
+    // see
+    // A quarter note at 60 BPM lasts exactly one second and at 120 BPM - half a second.
+    
+    int noteDuration = (int)((1000 * (60 * 4 / tempo[melody_name])) / beats[melody_name][thisNote] + 0.);
+    tone(Pin, melody[melody_name][thisNote],noteDuration);
+
+    // to distinguish the notes, set a minimum time between them.
+    // the note's duration + 20% seems to work well:
+    int pauseBetweenNotes = noteDuration * 1.20;
+    delay(pauseBetweenNotes);
+    // stop the tone playing:
+    noTone(Pin);
+  }*/
 }
 
 void ActioBuzzerV2::PlayNote(float note, int dur){
     int duration = 1000*dur;
     tone(Pin, note, duration);
     int Pause = dur*10;
+    noTone(Pin);
     delay(Pause);
     //digitalWrite(buzzerPin, HIGH);
     //delayMicroseconds(tone);

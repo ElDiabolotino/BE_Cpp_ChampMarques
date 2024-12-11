@@ -14,11 +14,11 @@ Repertoire::Repertoire(){
     //Melodie 0
     Mel_n_0[11] = (C_3, C_3, C_3, D_3, E_3, D_3, C_3, E_3,D_3, D_3,C_3);
     Mel_b_0[11] = (1,1,1,1,2,2,1,1,1,1,0);
-    Mel_t_0 = 120;
+    Mel_t_0 = 10;
     //Melodie 1   
     Mel_n_1[14] = (C_3, C_3, G_3, G_3, A_3, A_3, G_3, F_3, F_3, E_3, E_3, D_3, D_3, C_3);
     Mel_b_1[14] = (1,1,1,1,1,1,2,1,1,1,1,1,0);
-    Mel_t_1 = 300;
+    Mel_t_1 = 10;
 }
 void Repertoire::Add(String mel_name, float mel_notes[], int mel_beats[], int mel_tempo){
     melody[mel_name] = mel_notes;

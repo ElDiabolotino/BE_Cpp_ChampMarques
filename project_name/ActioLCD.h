@@ -28,11 +28,7 @@ class ActioLCD : public Actionneur
      * @brief Constructeur avec le curseur, l'allumage et le stroboscope
     */    
     ActioLCD(int On,int Cur, int Blin);
-    /**
-     * @fn ActioLCD();
-     * @brief Destructeur
-    */    
-    ~ActioLCD(); 
+
     void setParam(int On,int Cur, int Blin);
     /**
      * @fn virtual void setIsOn(int On)

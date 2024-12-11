@@ -46,18 +46,13 @@ void CapTempHumid::updateMesCapt(void){
   MesTempe.push_back(mesCapt[1]);
 }
 
-int* CapTempHumid::seuilDetect (float* seuil){
+int CapTempHumid::seuilDetect (float seuil,int which){
 
-  int diff[2];
-  diff[0]=0;
-  diff[1]=0;
-  if (seuil[0]<=MesHumid.back()){
-    diff[0] = 1;
-  }
-  if (seuil[1]<=MesTempe.back()){
-    diff[1] = 1;
-  }
+  int diff=0;
 
+  if (seuil<=MesHumid.back()&& which == 1 || seuil<=MesTempe.back()&& which == 2){
+    diff = 1;
+  }
   return diff;
 }
 

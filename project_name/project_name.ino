@@ -1,39 +1,16 @@
-#include "ActioLCD.h"
-#include "CapToucher.h"
-#include "ActioBuzzerV2.h"
-ActioLCD myLCD;
+#include "Application.h"
 
 
-const int TouchPin = 3;
-const int LedPin = 7;
-const int BuzzPin = 6;
-//ActioBuzzerV2 ab(BuzzPin,OUTPUT);
-CapToucher ct(TouchPin);
-
+  //(PinBuz=12,PinTHu=14,PinTou=13,PinLum=0,PinLed=15)
+  Application Appli(12,14,13,0,15);
 void setup() 
 {
   // put your setup code here, to run once:
-  //myLCD.init();
-  //ct.init();
-  //ab.init();
-  //pinMode(LedPin,OUTPUT);
-
+  Appli.init();
 }
 
 void loop() 
 {
   // put your main code here, to run repeatedly:
-  //myLCD.run();
-  //ct.run();
-  
-  /*if (ct.getEtat() == 1){
-    //ab.run();
-    digitalWrite(LedPin,HIGH);
-  }
-  else{
-    //digitalWrite(BuzzPin,LOW);
-    
-    digitalWrite(LedPin,LOW);
-    }*/
-
+  Appli.run();
 }

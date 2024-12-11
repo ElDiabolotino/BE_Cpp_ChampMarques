@@ -36,7 +36,6 @@ float CapLum::updateResistCapt(void){
   resistCapt = (float) (1023-mesCapt)*10/mesCapt;
   if (resistValues.size()>=mySize) resistValues.pop_front();
   resistValues.push_back(resistCapt);
-
   return resistCapt;
 }
 void CapLum::updateMesCapt(void){
@@ -47,7 +46,7 @@ void CapLum::updateMesCapt(void){
 int CapLum::seuilDetect(int seuil){
   int diff = 1;
   for (std::deque<float>::reverse_iterator rit=resistValues.rbegin();rit!=(resistValues.rbegin()+5);rit++)
-  if (seuil< *rit){
+  if (seuil< *rit && *rit!=0){
     int diff = 0;
   }
   return diff;
