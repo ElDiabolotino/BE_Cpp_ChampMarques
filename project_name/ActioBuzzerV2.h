@@ -21,7 +21,7 @@ class ActioBuzzerV2:public Actionneur, public Repertoire,public CapToucher {
     ~ActioBuzzerV2();
     void init(void);
     void run(String Mel_name);
-    void PlayMelody(void);
+    void PlayMelody(int a);
     void PlayMelody(String melody_name);
     void PlayNote(float note, int duration);
 };

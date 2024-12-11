@@ -23,14 +23,14 @@ class Application {
   ActioBuzzerV2 Buzzer;
   ActioLCD Ecran;
   ActioLED led;
-  UTCTime Horloge;
+  UTCTime Horloge; //Present in constructor and in initialization as a comment, since it is unused
   int tempsMesure;
   int musics;
 public : 
 Application(int PinBuz,int PinTHu, int PinTou, int PinLum, int PinLed);
 void run(void);
 void init(void);
-
+void refreshScreen(void);
 };
 
 #endif

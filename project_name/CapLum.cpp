@@ -14,7 +14,7 @@ CapLum::CapLum(void):resistValues(10,0.0){
 CapLum::CapLum(int Pin,int size):mySize(size),resistValues(size/2,0.0){
   lumPin = Pin;
   resistCapt = 0;
-  
+  mySize = size;
 }
 CapLum::~CapLum(){}
 
@@ -45,10 +45,16 @@ void CapLum::updateMesCapt(void){
 
 int CapLum::seuilDetect(int seuil){
   int diff = 1;
-  for (std::deque<float>::reverse_iterator rit=resistValues.rbegin();rit!=(resistValues.rbegin()+5);rit++)
-  if (seuil< *rit && *rit!=0){
-    int diff = 0;
-  }
+  if (resistValues.back()>seuil)
+    diff = 0;
+  if (*(resistValues.end()-1)>seuil)
+    diff = 0;
+  if (*(resistValues.end()-2)>seuil)
+    diff = 0;
+  if (*(resistValues.end()-3)>seuil)
+    diff = 0;
+  if (*(resistValues.end()-4)>seuil)
+    diff = 0;
   return diff;
 }
 

@@ -24,17 +24,29 @@ void ActioBuzzerV2::init(){
 void ActioBuzzerV2::run(String melody_name){
     PlayMelody(melody_name);
 }
-void ActioBuzzerV2::PlayMelody(void){
+void ActioBuzzerV2::PlayMelody(int a){
   int i = 0;
   while (i<1000){
   updateMesCapt();
   if (getEtat()==HIGH){
     break;
   }
-  digitalWrite(Pin, HIGH);
-  delay(50);
-  digitalWrite(Pin, LOW);
-  delay(50);
+  if (a==1){
+    digitalWrite(Pin, HIGH);
+    delay(50);
+    digitalWrite(Pin, LOW);
+    delay(50);
+  } else if (a == 2){
+    digitalWrite(Pin, HIGH);
+    delay(500);
+    digitalWrite(Pin,LOW);
+    delay(100);
+  } else if (a == 3){
+    digitalWrite(Pin,HIGH);
+    delay(50);
+    digitalWrite(Pin,LOW);
+    delay(500);
+  }
   i++;
   }
 }

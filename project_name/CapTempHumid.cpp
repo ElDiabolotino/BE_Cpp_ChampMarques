@@ -21,8 +21,7 @@ CapTempHumid::CapTempHumid(int Pin,int size): dht(Pin,DHTTYPE),mySize(size),MesH
   //  digitalWrite(PIN_GROVE_POWER,1);
   //}
 }
-
-CapTempHumid::~CapTempHumid(void){}
+CapTempHumid::~CapTempHumid(){}
 
 void CapTempHumid::init(){
   Wire.begin();
